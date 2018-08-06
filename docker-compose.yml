@@ -1,3 +1,13 @@
 version: '3'
 services:
-  
+  mariadb:
+    build: ./mariadb/.
+    environment:
+      MYSQL_DATABASE: drupal
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: drupal
+      MYSQL_ROOT_PASSWORD: AppleSucks
+    ports:
+      - "49160:3306"
+    volumes:
+      - ./mariadb/dbs:/var/lib/mysql
